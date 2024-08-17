@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Monitoring Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #34495e;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        nav ul li a:hover {
+            background-color: #2c3e50;
+            border-radius: 5px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #34495e;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ecf0f1;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        /* Contact form styling */
+        #contact-form {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #contact-form label {
+            display: block;
+            margin-top: 10px;
+            color: #2c3e50;
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #contact-form button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #contact-form button:hover {
+            background-color: #34495e;
+        }
+
+        /* E-commerce section */
+        #store {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #store .product {
+            display: inline-block;
+            width: 30%;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #store .product img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #store .product button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #store .product button:hover {
+            background-color: #34495e;
+        }
+
+        /* Social media integration */
+        .social-media {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            color: #2c3e50;
+            font-size: 24px;
+            text-decoration: none;
+        }
+
+        .social-media a:hover {
+            color: #34495e;
+        }
+    </style>
+</head>
+<body style="font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; color: #333;">
+    <header style="background-color: #283593; padding: 20px 0;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h1 style="color: #ffffff; font-size: 36px; margin: 0;">Fitness Monitoring Site</h1>
+            <nav style="margin-top: 20px;">
+                <ul style="list-style: none; padding: 0; margin: 0; display: flex; gap: 15px; justify-content: center;">
+                    <li><a href="#home" style="color: #ffffff; text-decoration: none; padding: 10px 15px;">Home</a></li>
+                    <li><a href="#dashboard" style="color: #ffffff; text-decoration: none; padding: 10px 15px;">Dashboard</a></li>
+                    <li><a href="#workouts" style="color: #ffffff; text-decoration: none; padding: 10px 15px;">Workouts</a></li>
+                    <li><a href="#nutrition" style="color: #ffffff; text-decoration: none; padding: 10px 15px;">Nutrition</a></li>
+                    <li><a href="#progress" style="color: #ffffff; text-decoration: none; padding: 10px 15px;">Progress Tracking</a></li>
+                    <li><a href="#goals" style="color: #ffffff; text-decoration: none; padding: 10px 15px;">Goals</a></li>
+                    <li><a href="#community" style="color: #ffffff; text-decoration: none; padding: 10px 15px;">Community</a></li>
+                    <li><a href="#resources" style="color: #ffffff; text-decoration: none; padding: 10px 15px;">Resources</a></li>
+                    <li><a href="#profile" style="color: #ffffff; text-decoration: none; padding: 10px 15px;">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</body>
+    
+    <main>
+        <section id="home" style="background-color: #f4f4f4; padding: 50px 20px; text-align: center;">
+            <h2 style="font-family: 'Arial', sans-serif; font-size: 36px; color: #333;">Welcome to Your Fitness Journey</h2>
+            <p style="font-family: 'Verdana', sans-serif; font-size: 18px; color: #666; margin-top: 20px;">
+                Track your workouts, monitor your nutrition, and achieve your fitness goals.
+            </p>
+            <button 
+                style="
+                    background-color: #28a745;
+                    color: white;
+                    padding: 15px 30px;
+                    font-size: 18px;
+                    border: none;
+                    border-radius: 5px;
+                    margin-top: 30px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                " 
+                onclick="location.href='#signup'">
+                Sign Up
+            </button>
+        </section>
+        
+        <!-- Add a hover effect for the button -->
+        <style>
+            #home button:hover {
+                background-color: #218838;
+            }
+        </style>
+        </section>
+        
+        <section id="dashboard" style="font-family: 'Helvetica', sans-serif; color: #2c3e50; padding: 60px 40px; background-color: #f4f6f9;">
+            <h2 style="font-size: 36px; margin-bottom: 20px; color: #2980b9;">User Dashboard</h2>
+            <p style="font-size: 20px; margin-bottom: 30px;">Get a comprehensive view of your fitness activities, track your progress, and stay on top of your goals.</p>
+            
+            <div style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px; padding: 30px;">
+                <h3 style="font-size: 28px; color: #2980b9;">Dashboard Overview</h3>
+                <p style="font-size: 16px; color: #2c3e50;">Here you can find insights into your workout statistics, nutritional data, and overall fitness progress.</p>
+                
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#workout-stats" style="color: #2980b9; text-decoration: none; transition: color 0.3s ease;">Workout Statistics</a>
+                    </li>
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#nutrition-summary" style="color: #2980b9; text-decoration: none; transition: color 0.3s ease;">Nutrition Summary</a>
+                    </li>
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#progress-tracking" style="color: #2980b9; text-decoration: none; transition: color 0.3s ease;">Progress Tracking</a>
+                    </li>
+                </ul>
+                
+                <button style="
+                    background-color: #2980b9;
+                    color: white;
+                    padding: 12px 20px;
+                    font-size: 16px;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    margin-top: 20px;
+                ">View Details</button>
+            </div>
+        </section>
+
+        <section id="workouts" style="font-family: 'Helvetica', sans-serif; color: #2c3e50; padding: 60px 30px; background-color: #e8f4f8;">
+            <h2 style="font-size: 36px; margin-bottom: 20px; color: #3498db;">Workouts</h2>
+            <p style="font-size: 20px; margin-bottom: 30px;">Explore a variety of workout routines, create your custom plans, and track your progress.</p>
+            
+            <div style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px; padding: 30px;">
+                <h3 style="font-size: 28px; color: #3498db;">Workout Routines</h3>
+                <p style="font-size: 16px; color: #2c3e50; margin-bottom: 20px;">Browse through our extensive library of workout routines suitable for different fitness levels and goals.</p>
+                
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#cardio-routines" style="color: #3498db; text-decoration: none; transition: color 0.3s ease;">Cardio Routines</a>
+                    </li>
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#strength-training" style="color: #3498db; text-decoration: none; transition: color 0.3s ease;">Strength Training</a>
+                    </li>
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#flexibility-workouts" style="color: #3498db; text-decoration: none; transition: color 0.3s ease;">Flexibility Workouts</a>
+                    </li>
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#custom-plans" style="color: #3498db; text-decoration: none; transition: color 0.3s ease;">Create Custom Plan</a>
+                    </li>
+                </ul>
+                
+                <button style="
+                    background-color: #3498db;
+                    color: white;
+                    padding: 12px 20px;
+                    font-size: 16px;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    margin-top: 20px;
+                ">Explore Workouts</button>
+            </div>
+        </section>
+        
+        <section id="nutrition" style="font-family: 'Helvetica', sans-serif; color: #2c3e50; padding: 40px 20px;">
+            <h2 style="font-size: 32px; margin-bottom: 15px;">Nutrition</h2>
+            <p style="font-size: 18px;">Log your meals and track your nutrition.</p>
+            
+            <div id="food-routine" style="margin-top: 30px;">
+                <h3 style="font-size: 28px; color: #34495e;">Daily Food Routine</h3>
+                <form id="food-log-form" style="font-size: 16px; color: #34495e; margin-top: 20px;">
+                    <label for="meal-type" style="display: block; margin-bottom: 10px;">Meal Type:</label>
+                    <select id="meal-type" name="meal-type" style="padding: 10px; width: 100%; margin-bottom: 20px;">
+                        <option value="breakfast">Breakfast</option>
+                        <option value="lunch">Lunch</option>
+                        <option value="dinner">Dinner</option>
+                        <option value="snack">Snack</option>
+                    </select>
+                    
+                    <label for="food-item" style="display: block; margin-bottom: 10px;">Food Item:</label>
+                    <input type="text" id="food-item" name="food-item" required style="padding: 10px; width: 100%; margin-bottom: 20px;">
+                    
+                    <label for="calories" style="display: block; margin-bottom: 10px;">Calories:</label>
+                    <input type="number" id="calories" name="calories" required style="padding: 10px; width: 100%; margin-bottom: 20px;">
+                    
+                    <button type="submit" style="
+                        background-color: #3498db;
+                        color: white;
+                        padding: 10px 20px;
+                        font-size: 16px;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    ">Add Meal</button>
+                </form>
+                
+                <h4 style="font-size: 24px; color: #34495e; margin-top: 30px;">Logged Meals</h4>
+                <ul id="meal-log" style="font-size: 16px; color: #34495e; margin-top: 15px;">
+                    <!-- Meal items will be added here dynamically -->
+
+        
+        <!-- Add a hover effect for the button -->
+        <style>
+            #nutrition button:hover {
+                background-color: #1a237e;
+            }
+        </style>
+        
+        <section id="goals" style="font-family: 'Georgia', serif; color: #1d1f21; padding: 50px 30px; background-color: #e0f7fa;">
+            <h2 style="font-size: 34px; margin-bottom: 20px; color: #00796b;">Goals</h2>
+            <p style="font-size: 20px; margin-bottom: 25px;">Set and track your fitness goals to stay motivated and achieve your targets.</p>
+            
+            <div style="background-color: #ffffff; border: 1px solid #b2dfdb; border-radius: 8px; padding: 20px;">
+                <h3 style="font-size: 28px; color: #00796b;">Create a New Goal</h3>
+                <form id="goals-form" style="font-size: 16px; color: #00796b; margin-top: 20px;">
+                    <label for="goal-name" style="display: block; margin-bottom: 10px;">Goal Name:</label>
+                    <input type="text" id="goal-name" name="goal-name" required style="padding: 10px; width: 100%; margin-bottom: 15px; border: 1px solid #00796b; border-radius: 4px;">
+                    
+                    <label for="goal-description" style="display: block; margin-bottom: 10px;">Description:</label>
+                    <textarea id="goal-description" name="goal-description" rows="4" required style="padding: 10px; width: 100%; margin-bottom: 15px; border: 1px solid #00796b; border-radius: 4px;"></textarea>
+                    
+                    <label for="goal-deadline" style="display: block; margin-bottom: 10px;">Deadline:</label>
+                    <input type="date" id="goal-deadline" name="goal-deadline" required style="padding: 10px; width: 100%; margin-bottom: 20px; border: 1px solid #00796b; border-radius: 4px;">
+                    
+                    <button type="submit" style="
+                        background-color: #00796b;
+                        color: white;
+                        padding: 12px 20px;
+                        font-size: 16px;
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                    ">Add Goal</button>
+                </form>
+                
+                <h4 style="font-size: 24px; color: #00796b; margin-top: 30px;">Your Goals</h4>
+                <ul id="goals-list" style="font-size: 16px; color: #1d1f21; margin-top: 15px;">
+                    <!-- List of goals will be dynamically added here -->
+                </ul>
+            </div>
+        </section>
+        
+        <section id="community" style="font-family: 'Arial', sans-serif; color: #2c3e50; padding: 60px 30px; background-color: #fafafa;">
+            <h2 style="font-size: 36px; margin-bottom: 20px; color: #3498db;">Community</h2>
+            <p style="font-size: 20px; margin-bottom: 30px;">Join fitness forums, share your experiences, and connect with others to stay motivated and informed.</p>
+            
+            <div style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px; padding: 30px;">
+                <h3 style="font-size: 28px; color: #3498db;">Get Involved</h3>
+                <p style="font-size: 18px; color: #2c3e50; margin-bottom: 20px;">Explore our community forums and join discussions on various fitness topics.</p>
+                
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#forum1" style="color: #3498db; text-decoration: none; transition: color 0.3s ease;">Fitness Tips & Tricks</a>
+                    </li>
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#forum2" style="color: #3498db; text-decoration: none; transition: color 0.3s ease;">Nutrition Advice</a>
+                    </li>
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#forum3" style="color: #3498db; text-decoration: none; transition: color 0.3s ease;">Workout Routines</a>
+                    </li>
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#forum4" style="color: #3498db; text-decoration: none; transition: color 0.3s ease;">Success Stories</a>
+                    </li>
+                </ul>
+                
+                <button style="
+                    background-color: #3498db;
+                    color: white;
+                    padding: 12px 20px;
+                    font-size: 16px;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    margin-top: 20px;
+                ">Join the Community</button>
+            </div>
+        </section>
+        
+        <section id="resources" style="font-family: 'Arial', sans-serif; color: #2c3e50; padding: 60px 30px; background-color: #f9f9f9;">
+            <h2 style="font-size: 36px; margin-bottom: 20px; color: #27ae60;">Resources</h2>
+            <p style="font-size: 20px; margin-bottom: 30px;">Explore our collection of blogs, guides, and FAQs to help you with your fitness journey.</p>
+            
+            <div style="background-color: #ffffff; border: 1px solid #ddd; border-radius: 8px; padding: 30px;">
+                <h3 style="font-size: 28px; color: #27ae60;">Featured Resources</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#blog" style="color: #27ae60; text-decoration: none; transition: color 0.3s ease;">Blog Articles</a>
+                    </li>
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#guides" style="color: #27ae60; text-decoration: none; transition: color 0.3s ease;">Fitness Guides</a>
+                    </li>
+                    <li style="font-size: 18px; margin-bottom: 15px;">
+                        <a href="#faqs" style="color: #27ae60; text-decoration: none; transition: color 0.3s ease;">FAQs</a>
+                    </li>
+                </ul>
+                
+                <button style="
+                    background-color: #27ae60;
+                    color: white;
+                    padding: 12px 20px;
+                    font-size: 16px;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    margin-top: 20px;
+                ">Explore More</button>
+            </div>
+        </section>
+
+        <section id="profile" style="font-family: 'Arial', sans-serif; color: #2c3e50; padding: 60px 30px; background-color: #ffffff;">
+            <h2 style="font-size: 36px; margin-bottom: 20px; color: #e74c3c;">Profile</h2>
+            <p style="font-size: 20px; margin-bottom: 30px;">Manage your account settings and personal information with ease.</p>
+            
+            <div style="background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 8px; padding: 30px;">
+                <h3 style="font-size: 28px; color: #e74c3c;">Account Settings</h3>
+                <form id="profile-form" style="font-size: 16px; color: #2c3e50; margin-top: 20px;">
+                    <label for="username" style="display: block; margin-bottom: 10px;">Username:</label>
+                    <input type="text" id="username" name="username" required style="padding: 10px; width: 100%; margin-bottom: 15px; border: 1px solid #e74c3c; border-radius: 4px;">
+                    
+                    <label for="email" style="display: block; margin-bottom: 10px;">Email:</label>
+                    <input type="email" id="email" name="email" required style="padding: 10px; width: 100%; margin-bottom: 15px; border: 1px solid #e74c3c; border-radius: 4px;">
+                    
+                    <label for="password" style="display: block; margin-bottom: 10px;">New Password:</label>
+                    <input type="password" id="password" name="password" required style="padding: 10px; width: 100%; margin-bottom: 20px; border: 1px solid #e74c3c; border-radius: 4px;">
+                    
+                    <button type="submit" style="
+                        background-color: #e74c3c;
+                        color: white;
+                        padding: 12px 20px;
+                        font-size: 16px;
+                        border: none;
+                        border-radius: 6px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                    ">Save Changes</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Fitness Monitoring Site. All rights reserved.</p>
+        <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('JavaScript loaded');
+
+            // Handle form submission
+            document.getElementById('food-log-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Get form values
+                const mealType = document.getElementById('meal-type').value;
+                const foodItem = document.getElementById('food-item').value;
+                const calories = document.getElementById('calories').value;
+
+                // Create a new list item
+                const newMeal = document.createElement('li');
+                newMeal.textContent = ${mealType.charAt(0).toUpperCase() + mealType.slice(1)}: ${foodItem} - ${calories} calories;
+
+                // Add the new meal to the meal log
+                document.getElementById('meal-log').appendChild(newMeal);
+
+                // Clear the form
+                document.getElementById('food-log-form').reset();
+            });
+        });
+    </script>
+</body>
+</html>+
